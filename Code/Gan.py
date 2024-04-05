@@ -220,12 +220,14 @@ y_test_encoded = label_encoder.transform(y_test_augmented_str)
 # Print unique encoded labels for testing data
 print(np.unique(y_test_encoded))
 
+# Combine data and labels into a DataFrame
 combined_data = pd.concat([data, pd.DataFrame(X_synthetic)], axis=0)
 synthetic_labels = np.ones((num_synthetic_samples,))
 combined_labels = np.concatenate([y, synthetic_labels])
-combined_data.to_csv('combined_data.csv', index=False)
-np.savetxt('combined_labels.csv', combined_labels, delimiter=',')
+combined_data['diagnosis'] = combined_labels
 
+# Save the combined data and labels to CSV files
+combined_data.to_csv('combined_data.csv', index=False)
 
 
 
