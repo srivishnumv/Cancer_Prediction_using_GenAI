@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Prediction Result</h1>
-    <p>The prediction is: {{ prediction }}</p>
-    <p>{{ "User has cancer" if prediction == "Malignant" else "User does not have cancer" }}</p>
+    <p>The prediction is: {{ prediction[0] }}</p>
+    <p>{{ "User has cancer" if prediction[0] == "Benign" else "User does not have cancer" }}</p>
 </body>
 </html>
