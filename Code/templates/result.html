@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: pink;
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: rgb(15, 14, 14);
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Prediction Result</h1>
-    <p>The prediction is: {{ prediction[0] }}</p>
-    <p>{{ "User has cancer" if prediction[0] == "Benign" else "User does not have cancer" }}</p>
+    <h1>Breast Cancer Prediction Result</h1>
+    <div class="result">
+        {% if prediction[0] == "Benign" %}
+            <p>User does not have cancer</p>
+        {% else %}
+            <p>User has cancer</p>
+        {% endif %}
+    </div>
 </body>
 </html>

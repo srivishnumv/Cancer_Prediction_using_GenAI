@@ -3,36 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cancer Prediction</title>
+    <title>Breast Cancer Prediction using GenAI</title>
+    <style>
+        body {
+            background-color: #ffffff; /* Changed to white */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #000000; /* Changed to black */
+        }
+
+        .navbar {
+            background-color: pink; /* Changed to pink */
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .grid-item {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .grid-item label {
+            color: black;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .grid-item input {
+            width: 50%; /* Decreased width */
+            padding: 5px; /* Decreased padding */
+            border: 1px solid #ccc; /* Added border */
+            border-radius: 4px; /* Added border radius */
+            box-sizing: border-box; /* Added box-sizing */
+        }
+
+        #predict-button {
+            display: block;
+            margin: 20px auto; /* Centered the button */
+            margin-right: -50px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #predict-button:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            color: #000000; /* Changed to black */
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Cancer Prediction</h1>
-    <form action="/predict" method="post">
-        <label for="radius_mean">Radius Mean:</label>
-        <input type="number" id="radius_mean" name="radius_mean" step="any" required><br><br>
-        
-        <label for="texture_mean">Texture Mean:</label>
-        <input type="number" id="texture_mean" name="texture_mean" step="any" required><br><br>
-        
-        <label for="perimeter_mean">Perimeter Mean:</label>
-        <input type="number" id="perimeter_mean" name="perimeter_mean" step="any" required><br><br>
-        
-        <label for="area_mean">Area Mean:</label>
-        <input type="number" id="area_mean" name="area_mean" step="any" required><br><br>
-        
-        <label for="smoothness_mean">Smoothness Mean:</label>
-        <input type="number" id="smoothness_mean" name="smoothness_mean" step="any" required><br><br>
-        
-        <label for="compactness_mean">Compactness Mean:</label>
-        <input type="number" id="compactness_mean" name="compactness_mean" step="any" required><br><br>
-        
-        <label for="concavity_mean">Concavity Mean:</label>
-        <input type="number" id="concavity_mean" name="concavity_mean" step="any" required><br><br>
-        
-        <label for="concave_points_mean">Concave Points Mean:</label>
-        <input type="number" id="concave_points_mean" name="concave_points_mean" step="any" required><br><br>
-        
-        <input type="submit" value="Predict">
+
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#about-us">About Us</a>
+    </div>
+
+    <h1>Breast Cancer Prediction using GenAI</h1>
+
+    <form class="grid-container" action="/predict" method="post">
+        <div class="grid-item">
+            <label for="radius_mean">Radius Mean:</label>
+            <input type="number" id="radius_mean" name="radius_mean" step="any" required>
+        </div>
+        <div class="grid-item">
+            <label for="texture_mean">Texture Mean:</label>
+            <input type="number" id="texture_mean" name="texture_mean" step="any" required>
+        </div>
+        <div class="grid-item">
+            <label for="perimeter_mean">Perimeter Mean:</label>
+            <input type="number" id="perimeter_mean" name="perimeter_mean" step="any" required>
+        </div>
+        <div class="grid-item">
+            <label for="area_mean">Area Mean:</label>
+            <input type="number" id="area_mean" name="area_mean" step="any" required>
+        </div>
+        <div class="grid-item">
+            <label for="smoothness_mean">Smoothness Mean:</label>
+            <input type="number" id="smoothness_mean" name="smoothness_mean" step="any" required>
+        </div>
+        <div class="grid-item">
+            <label for="compactness_mean">Compactness Mean:</label>
+            <input type="number" id="compactness_mean" name="compactness_mean" step="any" required>
+        </div>
+        <div class="grid-item">
+            <label for="concavity_mean">Concavity Mean:</label>
+            <input type="number" id="concavity_mean" name="concavity_mean" step="any" required>
+        </div>
+        <div class="grid-item">
+            <label for="concave_points_mean">Concave Points Mean:</label>
+            <input type="number" id="concave_points_mean" name="concave_points_mean" step="any" required>
+        </div>
+        <button id="predict-button" type="submit">Predict</button>
     </form>
+
 </body>
 </html>
