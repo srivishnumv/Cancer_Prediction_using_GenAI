@@ -33,29 +33,34 @@
         }
 
         .grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+             display: grid;
+            grid-template-columns: repeat(2, auto); /* Adjusted column width */
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 60px;
         }
+
 
         .grid-item {
             padding: 10px;
             text-align: center;
+            margin: 0px 70px;
         }
 
         .grid-item label {
-            color: black;
-            display: block;
-            margin-bottom: 5px;
+        color: black;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 18px; /* Increased font size for labels */
         }
 
+
         .grid-item input {
-            width: 50%; /* Decreased width */
-            padding: 5px; /* Decreased padding */
-            border: 1px solid #ccc; /* Added border */
-            border-radius: 4px; /* Added border radius */
-            box-sizing: border-box; /* Added box-sizing */
+            width: 80%; /* Increased width of the input boxes */
+            padding: 10px; /* Increased padding for better visibility */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 13px; /* Increased font size for input boxes */
         }
 
         #predict-button {
@@ -93,35 +98,35 @@
 
     <form class="grid-container" action="/predict" method="post">
         <div class="grid-item">
-            <label for="radius_mean">Radius Mean:</label>
+            <label for="radius_mean">Radius :</label>
             <input type="number" id="radius_mean" name="radius_mean" step="any" required>
         </div>
         <div class="grid-item">
-            <label for="texture_mean">Texture Mean:</label>
+            <label for="texture_mean">Texture :</label>
             <input type="number" id="texture_mean" name="texture_mean" step="any" required>
         </div>
         <div class="grid-item">
-            <label for="perimeter_mean">Perimeter Mean:</label>
+            <label for="perimeter_mean">Perimeter :</label>
             <input type="number" id="perimeter_mean" name="perimeter_mean" step="any" required>
         </div>
         <div class="grid-item">
-            <label for="area_mean">Area Mean:</label>
+            <label for="area_mean">Area :</label>
             <input type="number" id="area_mean" name="area_mean" step="any" required>
         </div>
         <div class="grid-item">
-            <label for="smoothness_mean">Smoothness Mean:</label>
+            <label for="smoothness_mean">Smoothness :</label>
             <input type="number" id="smoothness_mean" name="smoothness_mean" step="any" required>
         </div>
         <div class="grid-item">
-            <label for="compactness_mean">Compactness Mean:</label>
+            <label for="compactness_mean">Compactness :</label>
             <input type="number" id="compactness_mean" name="compactness_mean" step="any" required>
         </div>
         <div class="grid-item">
-            <label for="concavity_mean">Concavity Mean:</label>
+            <label for="concavity_mean">Concavity :</label>
             <input type="number" id="concavity_mean" name="concavity_mean" step="any" required>
         </div>
         <div class="grid-item">
-            <label for="concave_points_mean">Concave Points Mean:</label>
+            <label for="concave_points_mean">Concave Points :</label>
             <input type="number" id="concave_points_mean" name="concave_points_mean" step="any" required>
         </div>
         <button id="predict-button" type="submit">Predict</button>
